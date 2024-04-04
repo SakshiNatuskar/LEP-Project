@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Processed Loan Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        p {
+            color: #666;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        a {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Processed Loan Data</h1>
+    <p>The processed file is ready. You can download it using the link below:</p>
+    <a href="{{ url_for('download_file', filename=filename) }}">Download Processed File</a>
+</body>
+</html>

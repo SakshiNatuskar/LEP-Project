@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Loan Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Self Loan Application</h1>
+    <form id="loanForm" action="/predict" method="post">
+
+        <label for="applicantIncome">Applicant Income:</label>
+        <input type="number" id="applicantIncome" name="applicantIncome" required>
+
+        <label for="coapplicantIncome">Coapplicant Income:</label>
+        <input type="number" id="coapplicantIncome" name="coapplicantIncome" required>
+
+        <label for="loanAmount">Loan Amount:</label>
+        <input type="number" id="loanAmount" name="loanAmount" required>
+
+        <label for="loanTerm">Loan Term (in months):</label>
+        <input type="number" id="loanTerm" name="loanTerm" required>
+
+        <label for="status">Self Employed:</label>
+        <select id="status" name="status" required>
+            <option disabled selected>Married</option>
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+        </select>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option disabled selected></option>
+            <option value=1>Male</option>
+            <option value=0>Female</option>
+        </select>
+
+        <label for="selfEmployed">Self Employed:</label>
+        <select id="selfEmployed" name="selfEmployed" required>
+            <option disabled selected>Select Option</option>
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+        </select>
+
+        <label for="propertyArea">Property Area:</label>
+        <select id="propertyArea" name="propertyArea" required>
+            <option disabled selected>Select Area</option>
+            <option value=2>Urban</option>
+            <option value=1>Rural</option>
+            <option value=0>Semiurban</option>
+        </select>
+
+        <label for="education">Education:</label>
+        <select id="education" name="education" required>
+            <option disabled selected>Select Education</option>
+            <option value=1>Graduate</option>
+            <option value=0>Not Graduate</option>
+        </select>
+
+        <label for="dependents">Dependents:</label>
+        <input type="number" id="dependents" name="dependents" required>
+
+        <label for="creditHistory">Credit History:</label>
+        <input type="number" id="creditHistory" name="creditHistory" required>
+
+        <input type="submit" value="Submit">
+    </form>
+    
+</body>
+</html>

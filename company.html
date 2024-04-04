@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .thank-you {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+        /* Integrating styles from the first code snippet */
+        .container {
+            max-width: 100%;
+            margin: 0px;
+            text-align: center;
+        }
+        .logo {
+            float: left;
+        }
+        .logo h1 {
+            font-weight: bold;
+            margin: 5px;
+            margin-left: 20px;
+            padding: 5px;
+            color: white;
+        }
+        .nav {
+            float: right;
+        }
+        .nav button {
+            background-color: transparent;
+            border: none;
+            color: #000;
+            cursor: pointer;
+            font-size: 17px;
+            margin: 3px;
+            margin-top: 10px;
+            padding: 10px;
+        }
+        .nav button:hover {
+            text-decoration: underline;
+            background-color: #ffffff00;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: black; box-shadow: 0 7px 14px 0 rgba(0, 0, 0, 0.2);">
+        <div class="container" style="margin-top: 0px">
+            <div class="logo" style="color: white">
+                <h1>LEP</h1>
+            </div>
+            <div class="nav">
+                <a href="index.html"><button style="color: white; margin-right: 10px">HOME</button></a>
+                <a href="about.html"><button style="color: white; margin-right: 15px">ABOUT</button></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" id="companyPage" style="display: none">
+        <div class="landing-page-image">
+            <h2>Upload your CSV File</h2>
+            <p>To Make The Prediction</p>
+            <div class="form-container">
+                <input type="file" id="csvFile" accept=".csv" /><br />
+                <button onclick="uploadCSV()">Submit</button>
+            </div>
+            <div id="companyResult"></div>
+        </div>
+    </div>
+
+    <h2 style="text-align: center">Loan Prediction</h2>
+    <p class="thank-you">
+        Thank you for visiting! Please provide the CSV file you want to make
+        predictions on.
+    </p>
+    <form action="/predictsheet" method="post" enctype="multipart/form-data">
+        <label for="csvFile">Upload CSV File:</label>
+        <input type="file" id="csvFile" name="csvFile" accept=".csv" required />
+
+        <input type="submit" value="Submit" />
+    </form>
+
+    
+</body>
+</html>
+

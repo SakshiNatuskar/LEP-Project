@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application Result</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .result h2 {
+            color: #333;
+        }
+
+        .result p {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .result p.approved {
+            color: green;
+        }
+
+        .result p.not-approved {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="result">
+            <h2>Loan Application Result</h2>
+            <p id="predictionMessage">{{ prediction }}</p>
+        </div>
+    </div>
+
+    <script>
+        // Get the prediction message from Flask template
+        var predictionMessage = "{{ prediction }}";
+
+        // Display the prediction message with appropriate styling
+        var predictionElement = document.getElementById("predictionMessage");
+        if (predictionMessage.includes("Congratulations")) {
+            predictionElement.classList.add("approved");
+        } else if (predictionMessage.includes("We regret")) {
+            predictionElement.classList.add("not-approved");
+        }
+    </script>
+</body>
+</html>
